@@ -18,5 +18,12 @@ class TestArticleParser(unittest.TestCase):
         articles = parse_articles(xml_data)
         self.assertEqual(len(articles), 232, "The number of articles in BV should be 232.")
         
+    def test_article_num_contains_only_digits_and_optional_letter(self):
+        for law in LawRepo.laws:
+            xml_data = LawRepo.get_xml(law)
+            articles = parse_articles(xml_data)
+            for article in articles:
+                self.assertRegex(article.article_number, r'^\d+[a-z]*$', f"Article number {article.article_number} in {law} does not match the expected pattern.")
+        
 if __name__ == '__main__':
     unittest.main()

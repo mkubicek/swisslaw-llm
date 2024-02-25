@@ -9,7 +9,7 @@ def parse_articles(xml_content):
     body = root.find('.//akn:body', {'akn': 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0'})
     if body is not None:
         for article in body.findall('.//akn:article', {'akn': 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0'}):
-            article_num = ''.join(article.find('.//akn:num', {'akn': 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0'}).itertext()).strip()
+            article_num = ''.join(article.find('.//akn:num', {'akn': 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0'}).itertext()).strip().replace('\xa0', ' ')
             if article_num:
                 articles.append(Article(article_number=article_num))
     return articles
