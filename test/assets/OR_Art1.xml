@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso
+	xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+	<act name="publicLaw">
+		<meta>
+			<identification source="#ch.bk">
+				<FRBRWork>
+					<FRBRthis value="https://fedlex.data.admin.ch/eli/cc/27/317_321_377/20240101/main-text"/>
+					<FRBRuri value="https://fedlex.data.admin.ch/eli/cc/27/317_321_377/20240101"/>
+					<FRBRdate date="2024-01-01" name="jolux:dateApplicability"/>
+					<FRBRdate date="1911-03-30" name="jolux:dateDocument"/>
+					<FRBRdate date="1912-01-01" name="jolux:dateEntryInForce"/>
+					<FRBRauthor href="#ch.bk" as="#publisher"/>
+					<FRBRauthor href="#ch.bk" as="#rightsHolder"/>
+					<FRBRcountry value="CH"/>
+					<FRBRnumber value="220"/>
+					<FRBRname xml:lang="it" value="Legge federale del 30 marzo 1911 di complemento del Codice civile svizzero (Libro quinto: Diritto delle obbligazioni)" shortForm="CO"/>
+					<FRBRname xml:lang="en" value="Federal Act of 30 March 1911 on the Amendment of the Swiss Civil Code (Part Five: The Code of Obligations)" shortForm="CO"/>
+					<FRBRname xml:lang="fr" value="Loi fédérale du 30 mars 1911 complétant le code civil suisse (Livre cinquième: Droit des obligations)" shortForm="CO"/>
+					<FRBRname xml:lang="rm" value="Lescha federala dals 30 da mars 1911 davart la cumplettaziun dal cudesch civil svizzer (Tschintgavla part: Dretg d'obligaziuns)" shortForm="DO"/>
+					<FRBRname xml:lang="de" value="Bundesgesetz vom 30. März 1911 betreffend die Ergänzung des Schweizerischen Zivilgesetzbuches (Fünfter Teil: Obligationenrecht)" shortForm="OR"/>
+					<FRBRauthoritative value="true"/>
+				</FRBRWork>
+				<FRBRExpression>
+					<FRBRthis value="https://fedlex.data.admin.ch/eli/cc/27/317_321_377/20240101/de/main-text"/>
+					<FRBRuri value="https://fedlex.data.admin.ch/eli/cc/27/317_321_377/20240101/de"/>
+					<FRBRdate date="2024-01-01" name="jolux:dateApplicability"/>
+					<FRBRdate date="1911-03-30" name="jolux:dateDocument"/>
+					<FRBRdate date="1912-01-01" name="jolux:dateEntryInForce"/>
+					<FRBRauthor href="#ch.bk" as="#publisher"/>
+					<FRBRauthor href="#ch.bk" as="#rightsHolder"/>
+					<FRBRlanguage language="de"/>
+				</FRBRExpression>
+				<FRBRManifestation fedlex:generator="2023-q2-rel-1.3.76"
+					xmlns:fedlex="http://fedlex.admin.ch/">
+					<FRBRthis value="https://fedlex.data.admin.ch/eli/cc/27/317_321_377/20240101/de/xml/main-text"/>
+					<FRBRuri value="https://fedlex.data.admin.ch/eli/cc/27/317_321_377/20240101/de/xml"/>
+					<FRBRdate date="2024-01-01" name="jolux:dateApplicability"/>
+					<FRBRdate date="1911-03-30" name="jolux:dateDocument"/>
+					<FRBRdate date="1912-01-01" name="jolux:dateEntryInForce"/>
+					<FRBRauthor href="#ch.bk" as="#publisher"/>
+					<FRBRauthor href="#ch.bk" as="#rightsHolder"/>
+					<FRBRformat value="xml"/>
+				</FRBRManifestation>
+			</identification>
+			<references source="#ch.bk">
+				<TLCOrganization eId="ch.bk" href="https://fedlex.data.admin.ch/vocabulary/legal-institution/2" showAs="Bundeskanzlei"/>
+				<TLCRole eId="publisher" href="http://data.legilux.public.lu/resource/ontology/jolux#publisher" showAs="Editeur"/>
+				<TLCRole eId="rightsHolder" href="http://data.legilux.public.lu/resource/ontology/jolux#rightsHolder" showAs="Détenteur des droits"/>
+				<TLCReference name="language" href="http://publications.europa.eu/resource/authority/language/DEU" showAs="de"/>
+				<TLCReference name="format" href="https://fedlex.data.admin.ch/vocabulary/user-format/xml" showAs="xml"/>
+			</references>
+		</meta>
+		<preface>
+			<p>
+				<docNumber>220</docNumber>
+			</p>
+			<p>
+				<docTitle>Bundesgesetz
+					<br/>betreffend die Ergänzung 
+					<br/>des Schweizerischen Zivilgesetzbuches 
+					<br/>(Fünfter Teil: Obligationenrecht)
+				</docTitle>
+			</p>
+			<p>vom 30. März 1911 (Stand am 1. Januar 2024)</p>
+		</preface>
+		<preamble>
+			<p>Die Bundesversammlung der Schweizerischen Eidgenossenschaft,</p>
+			<p>nach Einsicht in die Botschaften des Bundesrates vom 3. März 1905 und 
+				<br/>1. Juni 1909
+				<authorialNote>
+					<p>
+						<ref href="https://fedlex.data.admin.ch/eli/fga/1905/2_1_1_">BBl 
+							<b>1905</b> II 1
+						</ref>, 
+						<ref href="https://fedlex.data.admin.ch/eli/fga/1909/3_725__">
+							<b>1909</b> III 725
+						</ref>, 
+						<ref href="https://fedlex.data.admin.ch/eli/fga/1911/1_845__">
+							<b>1911</b> I 845
+						</ref>
+					</p>
+				</authorialNote>,
+			</p>
+			<p>beschliesst:</p>
+		</preamble>
+		<body>
+			<part eId="part_1">
+				<num>Erste Abteilung: Allgemeine Bestimmungen</num>
+				<title eId="part_1/tit_1">
+					<num>Erster Titel: Die Entstehung der Obligationen</num>
+					<chapter eId="part_1/tit_1/chap_1">
+						<num>Erster Abschnitt: Die Entstehung durch Vertrag</num>
+						<level eId="part_1/tit_1/chap_1/lvl_A">
+							<num>A. Abschluss des Vertrages</num>
+							<level eId="part_1/tit_1/chap_1/lvl_A/lvl_I">
+								<num>I. Übereinstimmende Willensäusserung</num>
+								<level eId="part_1/tit_1/chap_1/lvl_A/lvl_I/lvl_1">
+									<num>1. Im </num>
+									<heading>Allgemeinen</heading>
+									<article eId="art_1">
+										<num>
+											<b>Art. 1</b>
+										</num>
+										<paragraph eId="art_1/para_1">
+											<num>1</num>
+											<content>
+												<p> Zum Abschlusse eines Vertrages ist die übereinstimmende gegenseitige Willensäusserung der Parteien erforderlich.</p>
+											</content>
+										</paragraph>
+										<paragraph eId="art_1/para_2">
+											<num>2</num>
+											<content>
+												<p> Sie kann eine ausdrückliche oder stillschweigende sein.</p>
+											</content>
+										</paragraph>
+									</article>
+								</level>
+							</level>
+						</level>
+					</chapter>
+				</title>
+			</part>
+		</body>
+		<components>
+		</components>
+	</act>
+</akomaNtoso>
