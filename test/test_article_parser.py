@@ -25,6 +25,21 @@ class TestArticleParser(unittest.TestCase):
             articles = parse_articles(xml_data)
             for article in articles:
                 self.assertRegex(article.article_number, r'^\d+[a-z]*$', f"Article number {article.article_number} in {law} does not match the expected pattern.")
+                
+    def test_article_num_at_least_one_ending_with_letter(self):
+        for law in LawRepo.laws:
+            xml_data = LawRepo.get_xml(law)
+            articles = parse_articles(xml_data)
+
+            found_article_with_letter = False
+
+            for article in articles:
+                if re.search(r'\d+[a-z]$', article.article_number):
+                    found_article_with_letter = True
+                    break
+
+            self.assertTrue(found_article_with_letter, f"No article number ending with a letter found in {law}.")
+
     
     def test_article_contains_paragraphs(self):
         for law in LawRepo.laws:

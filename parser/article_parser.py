@@ -63,7 +63,7 @@ def parse_articles(xml_content):
     parent_map = {child: parent for parent in root.iter() for child in parent}
 
     for article in root.findall('.//akn:body//akn:article', NS):
-        article_num_raw = ' '.join(article.find('.//akn:num', NS).itertext()).strip()
+        article_num_raw = ' '.join(article.find('.//akn:num', NS).itertext()).strip().replace(' ', '')
         article_num = re.search(r'\d+[a-z]*', article_num_raw).group()
         if article_num:
             articles.append(Article(article_number=article_num, paragraphs=_get_paragraphs(article), context=_get_context(article, parent_map)))
