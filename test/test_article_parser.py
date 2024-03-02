@@ -32,7 +32,7 @@ class TestArticleParser(unittest.TestCase):
             for article in articles:
                 self.assertTrue(len(article.paragraphs) > 0, f"Article {article.article_number} in {law} does not contain any paragraphs.")
                 
-    def test_or_parse_article_1(self):
+    def test_or_parse_article_1_paragraphs(self):
         # read assets/OR_Art1.xml and parse it
         with open('test/assets/OR_Art1.xml', 'r') as file:
             xml_data = file.read()
@@ -42,6 +42,6 @@ class TestArticleParser(unittest.TestCase):
         
         article_1_paragraphs = ['Zum Abschlusse eines Vertrages ist die übereinstimmende gegenseitige Willensäusserung der Parteien erforderlich.', 'Sie kann eine ausdrückliche oder stillschweigende sein.']
         self.assertEqual(articles[0].paragraphs, article_1_paragraphs, "Article 1 in OR does not contain the expected paragraphs.")
-        
+
 if __name__ == '__main__':
     unittest.main()
