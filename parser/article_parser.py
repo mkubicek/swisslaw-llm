@@ -26,14 +26,30 @@ def _get_paragraphs(article):
 
 def _get_context(article, parent_map):
     context = []
+    seen_eids = set()  # Set to keep track of eIds that have been processed
+
     current = parent_map.get(article)
     while current is not None and current.tag != 'akn:body' and current.tag is not ET.Comment:
-        num = current.find('.//akn:num', NS)
-        heading = current.find('.//akn:heading', NS)
-        if num is not None:
-            context.append(' '.join(num.itertext()).strip())
-        elif heading is not None:
-            context.append(' '.join(heading.itertext()).strip())
+        eid = current.get('eId')  # Get the eId attribute of the current element
+
+        if eid and eid not in seen_eids:
+            # Directly find num and heading under the current node without deeper search
+            num = current.find('akn:num', NS)
+            heading = current.find('akn:heading', NS)
+
+            context_entry = ''
+            if num is not None:
+                context_entry += ' '.join(num.itertext()).strip().replace('\xa0', ' ')
+            if heading is not None:
+                # Add a space before heading if num was also found
+                if context_entry:
+                    context_entry += ' '
+                context_entry += ' '.join(heading.itertext()).strip().replace('\xa0', ' ')
+
+            if context_entry:
+                context.append(context_entry)
+                seen_eids.add(eid)  # Mark this eId as processed
+
         current = parent_map.get(current)
 
     return context[::-1]

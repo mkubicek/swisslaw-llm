@@ -1,6 +1,7 @@
 import unittest
 from law_repo.law_repo import LawRepo
 from parser.article_parser import parse_articles
+import re
 
 class TestArticleParser(unittest.TestCase):
     def test_or_article_count(self):
@@ -42,6 +43,20 @@ class TestArticleParser(unittest.TestCase):
         
         article_1_paragraphs = ['Zum Abschlusse eines Vertrages ist die übereinstimmende gegenseitige Willensäusserung der Parteien erforderlich.', 'Sie kann eine ausdrückliche oder stillschweigende sein.']
         self.assertEqual(articles[0].paragraphs, article_1_paragraphs, "Article 1 in OR does not contain the expected paragraphs.")
+
+    def test_or_parse_article_1_context(self):
+        # read assets/OR_Art1.xml and parse it
+        with open('test/assets/OR_Art1.xml', 'r') as file:
+            xml_data = file.read()
+        articles = parse_articles(xml_data)
+        
+        article_1_context = ['Erste Abteilung: Allgemeine Bestimmungen', 
+                             'Erster Titel: Die Entstehung der Obligationen',
+                             'Erster Abschnitt: Die Entstehung durch Vertrag',
+                             'A. Abschluss des Vertrages',
+                             'I. Übereinstimmende Willensäusserung',
+                             '1. Im Allgemeinen']
+        self.assertEqual(articles[0].context, article_1_context, "Article 1 in OR does not contain the expected context.")
 
 if __name__ == '__main__':
     unittest.main()
